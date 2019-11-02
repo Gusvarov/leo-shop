@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet/less" href="less/index.less">
+
 </head>
 <body>
     <header>
@@ -60,7 +61,7 @@
                         <input type="search">
                         <button><img src="img/search.jpg" alt="Search Button"></button>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            <img src="img/cart.png" alt="" id="cart">
+                        <img src="img/cart.png" alt="" id="cart">
                         </button>
                     </form>
                 </div>
@@ -107,59 +108,59 @@
             <h1>Featured products</h1>
         </div>
         <div class="products">
-            <div class="products-wrapper">
+            <div class="products-wrapper" id="products-wrapper">
                 <img src="img/product.jpg" alt="">
                 <span>Glass 1</span>
                 <span class="price">$389.00</span>
-                <button class="add-to-carts">Add to cart</button>
+                <button class="add-to-cart" data-id="1">Add to cart</button>
             </div>
             <div class="products-wrapper">
                 <img src="img/product.jpg" alt="">
                 <span>Glass 2</span>
                 <span class="price">$90.00</span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-id="2">Add to cart</button>
             </div>
             <div class="products-wrapper">
                 <img src="img/product.jpg" alt="">
                 <span>Glass 3</span>
                 <span class="price">$290.00</span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-id="3">Add to cart</button>
             </div>
             <div class="products-wrapper">
                 <img src="img/product.jpg" alt="">
                 <span>Glass 4</span>
                 <span class="price">$51.00</span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-id="4">Add to cart</button>
             </div>
             <div class="products-wrapper">
                 <img src="img/product.jpg" alt="">
                 <span>Glass 5</span>
                 <span class="price">$459.00</span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-id="5">Add to cart</button>
             </div>
             <div class="products-wrapper">
                 <img src="img/product.jpg" alt="">
                 <span>Glass 6</span>
                 <span class="price">$666.00</span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-id="6">Add to cart</button>
             </div>
             <div class="products-wrapper">
                 <img src="img/product.jpg" alt="">
-                <span>Glass 7</span>
+                <span class="title">Glass 7</span>
                 <span class="price">$254.00</span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-id="7">Add to cart</button>
             </div>
             <div class="products-wrapper">
                 <img src="img/product.jpg" alt="">
                 <span>Glass 8</span>
                 <span class="price">$906.00</span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-id="8">Add to cart</button>
             </div>
             <div class="products-wrapper">
                 <img src="img/product.jpg" alt="">
                 <span>Glass 9</span>
                 <span class="price">$120.00</span>
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-id="9">Add to cart</button>
             </div>
         </div>
     </main>
@@ -193,5 +194,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <script src='js/products.json'></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
-{
-    "id":1,
-    "name":"glass1",
-    "price":389
-}
+[
+    {
+        "id":  1,
+        "name": "glass1",
+        "price": 389
+    }
+]

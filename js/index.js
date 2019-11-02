@@ -1,52 +1,58 @@
-const addToCart = document.querySelector('.add-to-carts');
-const modalBody = document.querySelector('.modal-body');
+let d = document;
+const prd = d.getElementById('products-wrapper')
+const addToCart = d.querySelector('.add-to-cart');
+const modalBody = d.querySelector('.modal-body');
 
 const products = [
     {
-        name:"Glass 1",
-        price:389
+        id: 1,
+        name: 'Glass 1',
+        price: 390
     },
-    // {
-    //     name:"Glass 2",
-    //     price:90
-    // },
+    {
+        id: 2,
+        name: 'Glass 2',
+        price: 90
+    }
 ]
 
-let cartPrice = 0;
-let reset = 'Clear';
-
-reset = modalBody.addEventListener('click', function() {
-    modalBody.innerHTML = '';
-})
-
-addToCart.addEventListener('click', () => {
-    let result = products.map(function(item) {
-        cartPrice += item.price;
-    })
-
-    modalBody.innerHTML = `<div class="products-wrapper d-flex flex-column">
-                <img src="img/product.jpg" alt="">
-
-                <br>
-                <span>Price:</span>${cartPrice}
-                <button>${reset}</button>
+for ( let key in products ) {
+    console.log(products[key].id);
+    let productId = products[key].id;
+    let itemId = prd.getAttribute('data-id');
+    for(var i = 0; i < itemId.length; i++){
+        addEvent(itemId[i].querySelector('.add-to-cart'), 'click', () => {
+            modalBody.innerHTML = `
+                <div class="products-wrapper">
+                    <img src="img/product.jpg" alt="">
+                    <h2>${products[key].name}</h2>
+                    <span class="price">${products[key].price}</span>
                 </div>`
-})
+        });
+    }
+}
+//     if ( productId === 1 ) {
+//         addToCart.addEventListener('click', () => {
 
+//             modalBody.innerHTML = `
+//                 <div class="products-wrapper">
+//                     <img src="img/product.jpg" alt="">
+//                     <h2>${products[key].name}</h2>
+//                     <span class="price">${products[key].price}</span>
+//                 </div>`
+//         })
+//     } else if ( productId === 2 ) {
+//         addToCart.addEventListener('click', () => {
+//             modalBody.innerHTML = `
+//                 <div class="products-wrapper">
+//                     <img src="img/product.jpg" alt="">
+//                     <h2>${products[key].name}</h2>
+//                     <span class="price">${products[key].price}</span>
+//                 </div>`
+//         })
+//     }
+// }
 
+// addToCart.addEventListener('click', () => {
 
- // if ( products.firstProduct.id === 1 ) {
-    //      modalBody.innerHTML = `<div class="products-wrapper d-flex flex-column">
-    //             <img src="img/product.jpg" alt="">
-    //             ${products.firstProduct.name}
-    //             <br>
-    //             ${products.firstProduct.price}
-    //         </div>`
-    // } else if ( products.secondProduct.id === 2 ) {
-    //     `<div class="products-wrapper d-flex flex-column">
-    //             <img src="img/product.jpg" alt="">
-    //             ${products.secondProduct.name}
-    //             <br>
-    //             ${products.secondProduct.price}
-    //         </div>`
-    // }
+// })
