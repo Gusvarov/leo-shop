@@ -1,7 +1,4 @@
-let d = document;
-const prd = d.getElementById('products-wrapper')
-const addToCart = d.querySelector('.add-to-cart');
-const modalBody = d.querySelector('.modal-body');
+let modalBody = document.querySelector('.modal-body');
 
 const products = [
     {
@@ -16,43 +13,38 @@ const products = [
     }
 ]
 
-for ( let key in products ) {
-    console.log(products[key].id);
-    let productId = products[key].id;
-    let itemId = prd.getAttribute('data-id');
-    for(var i = 0; i < itemId.length; i++){
-        addEvent(itemId[i].querySelector('.add-to-cart'), 'click', () => {
-            modalBody.innerHTML = `
-                <div class="products-wrapper">
-                    <img src="img/product.jpg" alt="">
-                    <h2>${products[key].name}</h2>
-                    <span class="price">${products[key].price}</span>
-                </div>`
-        });
-    }
-}
-//     if ( productId === 1 ) {
-//         addToCart.addEventListener('click', () => {
+let addToCart = document.querySelectorAll('.add-to-cart');
 
-//             modalBody.innerHTML = `
-//                 <div class="products-wrapper">
-//                     <img src="img/product.jpg" alt="">
-//                     <h2>${products[key].name}</h2>
-//                     <span class="price">${products[key].price}</span>
-//                 </div>`
-//         })
-//     } else if ( productId === 2 ) {
-//         addToCart.addEventListener('click', () => {
-//             modalBody.innerHTML = `
-//                 <div class="products-wrapper">
-//                     <img src="img/product.jpg" alt="">
-//                     <h2>${products[key].name}</h2>
-//                     <span class="price">${products[key].price}</span>
-//                 </div>`
-//         })
+window.addEventListener('click', function(e) {
+    const key = document.querySelector(`.add-to-cart[data-key="${e.keyCode}"]`);
+})
+
+
+addToCart.forEach( key => key.addEventListener('click', () => {
+    modalBody.innerHTML = `<div class="products-wrapper" id="products-wrapper">
+                <img src="img/product.jpg" alt="">
+                <span>Glass 1</span>
+                <span class="price">$389.00</span>
+                
+            </div>`;
+}));
+
+
+//addToCart.addEventListener('click', function(e) {
+   // const audio = document.querySelector(`.add-to-cart[data-key="${e.keyCode}"]`);
+    // const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    // if ( !audio) return;
+    // audio.currentTime = 0;
+    // audio.play();
+    // key.classList.add('playing');
+   // modalBody.innerHTML = 'dsdgdss';
+//});
+
+// function removeTransition(e) {
+//         if ( e.propertyName !== 'transform' ) return;
+//         this.classList.remove('playing');
 //     }
-// }
 
-// addToCart.addEventListener('click', () => {
 
-// })
+// const keys = document.querySelectorAll('.key');
+// keys.forEach( key => key.addEventListener('transitionend', removeTransition));
